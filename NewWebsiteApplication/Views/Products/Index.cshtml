@@ -1,0 +1,86 @@
+﻿@model IEnumerable<NewWebsiteApplication.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<style>
+    body {
+        background-image: url("https://image.freepik.com/free-photo/white-product-stand-white-background_10307-1268.jpg");
+    }
+    
+</style>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductBrand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Manufacture)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <img src=" https://tse3.mm.bing.net/th?id=OIP.iKhosCQ_ym8jJf1nwAmISQHaHa&pid=Api&P=0&w=157&h=157"
+             alt=" Software development icon " height=" 150 " width="200" />
+
+
+        <img src=" https://tse1.mm.bing.net/th?id=OIP.q0upuLbwdtAa9ZsaKIDKqgHaE8&pid=Api&P=0&w=240&h=160"
+             alt=" Software development icon " height=" 150 " width="200" />
+
+
+        <img src="https://tse2.mm.bing.net/th?id=OIP.ogeRiXfKE48k03WbE1WWWwHaHa&pid=Api&P=0&w=156&h=156"
+             alt=" Software development icon " height=" 150 " width="200" />
+
+
+        <img src="https://tse4.mm.bing.net/th?id=OIP.7C8-ajPO8zKmXmqp44D2nQHaCS&pid=Api&P=0&w=508&h=157"
+             alt=" Software development icon " height=" 150 " width="310" />
+
+
+        <img src="https://tse4.mm.bing.net/th?id=OIP.C8yYerYSh-X4OtBeOTVv7gHaFj&pid=Api&P=0&w=230&h=172"
+             alt=" Software development icon " height=" 150 " width="200" />
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductBrand)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Manufacture)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ProductID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ProductID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ProductID">Delete</a>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+    <tbody>
+        <div class="text-center">
+            <h1 class="display-4">Order Place</h1>
+            <p>Shopping  <a href="http://localhost:26606/Order_Pay"> Order  </a>.</p>
+        </div>
+    </tbody>
+</table>
